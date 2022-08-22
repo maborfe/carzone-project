@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+    <head>
+
+        {% include 'includes/_head.html' %}
+
+        {% block head %}
+        {% endblock %}
+
+    </head>
+
+    <body>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX5VQP"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        {% include 'includes/_head_header_nav_banner.html' %}
+
+        {% block content %}
+        
+        {% endblock %}
+
+        {% include 'includes/_js_script_files.html' %}
+
+    </body>
+
+</html>
