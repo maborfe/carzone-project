@@ -1,5 +1,7 @@
 from django.shortcuts import HttpResponse, render
 
+from .models import *
+
 
 # Create your views here.
 def index(request):
@@ -27,7 +29,12 @@ def search(request):
     return render(request, 'pages/search.html')
     
 def about(request):
-    return render(request, 'pages/about.html')
+    template = 'pages/about.html'
+    context = dict()
+    our_team = Team.objects.all()
+    context = {'our_team': our_team}    
+    
+    return render(request, template, context)
 
 def car_details(request):
     return render(request, 'pages/car_details.html')
