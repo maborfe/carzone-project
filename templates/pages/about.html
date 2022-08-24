@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block head %}
@@ -35,7 +36,7 @@
                 <div class="active item carousel-item" data-slide-number="0">
                   <img src="static/img/car/car-1.jpg" class="img-fluid" alt="slider-car">
                 </div>
-                <div class="item carousel-item" data-slide-number="1">
+                <div class=" item carousel-item" data-slide-number="1">
                   <img src="static/img/car/car-2.jpg" class="img-fluid" alt="slider-car">
                 </div>
                 <div class="item carousel-item" data-slide-number="2">
@@ -86,32 +87,34 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
       </div>
       <!-- Slick slider area start -->
-      <div class="slick-slider-area clearfix">
+      <div class="slick-slider-area clearfix container">
         <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
-          {% for member in our_team %}
+          {% for member in team_members %}
             <div class="slick-slide-item">
               <div class="team-1">
                 <div class="photo">
                   <a href="#">
-                    <img src="{{member.img.url}}" alt="team-1" class="img-fluid">
+                    <img style="width: 150px; height: 150px; overflow: hidden; object-fit: cover; border-radius:50%;" src=" {{member.img.url}} " alt=" team-1" class=" img-fluid" ="img-fluid">
                   </a>
                   <div class="social-list clearfix">
-                    <a href="{{member.facebookLK}}" class="facebook-bg">
+                    <a href="{{member.facebookLK}}" style="border-radius:50%; height: 30px; width:30px;" class="facebook-bg">
                       <i class="fa fa-facebook"></i>
                     </a>
-                    <a href="#" class="twitter-bg">
+                    <a href="#" class="twitter-bg" style="border-radius:50%; height: 30px; width:30px;">
                       <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="#" class="google-bg">
+                    <a href="#" class="google-bg" style="border-radius:50%; height: 30px; width:30px;">
                       <i class="fa fa-google"></i>
                     </a>
                   </div>
                 </div>
                 <div class="details">
-                  <h4>
-                    <a href="team-detail.html">{{member.name}}</a>
-                  </h4>
-                  <h5>{{member.position}}</h5>
+                  <h5>
+                    <strong>
+                      <a href="team-detail.html">{{member.name}}</a>
+                    </strong>
+                  </h5>
+                  <h6>{{member.position}}</h6>
                 </div>
               </div>
             </div>

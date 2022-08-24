@@ -11,7 +11,8 @@ class Team(models.Model):
     twitterLK = models.URLField(null=True, blank=True, max_length=255)
     googlePlusLK = models.URLField(null=True, blank=True, max_length=255)
     created_date = models.DateTimeField(auto_now_add=True)
-
+    class Meta:
+        ordering = ('id',)
     @mark_safe
     def icone(self):
         return f'<img width="35px" src="/media/{self.img}"'

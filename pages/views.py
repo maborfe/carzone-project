@@ -31,8 +31,8 @@ def search(request):
 def about(request):
     template = 'pages/about.html'
     context = dict()
-    our_team = Team.objects.all()
-    context = {'our_team': our_team}    
+    team_members = Team.objects.all()
+    context = {'team_members': team_members}    
     
     return render(request, template, context)
 
